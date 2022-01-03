@@ -1,0 +1,119 @@
+153. Component Updates in Action
+
+The Component re-renders on every state change. Looking at the DOM, the only thing
+that changes are what need to be changed and nothing else.
+
+
+
+154. A Closer Look At Child Component Re-Evaluation
+
+Added a DemoOutput component to show the paragraph instead. The behavior is the exact
+same as before. The app component is still re-evaluated on every button click and
+now DemoOutput is as well.
+
+!!! Even when DemoOutput is passed a constant false value, it is still rendered every
+time. If a component is re-executed, all of its children and ITS children are also 
+re-executed.
+
+Re-evaluating DemoOutput evey time is a total waste.
+
+
+
+155. Preventing Unnecessary Re-Evaluations with React.memo()
+
+React.memo() tells React that for this component, which it gets as a argument, React should 
+look at the props this component gets and check the new value for all those props
+and compare it to the previous value those props got. And only if the value of a 
+prop changed, the component should be re-executed and re-evaluated. And if the 
+parent component changed but the prop values for that component here did not change,
+component execution will be skipped.
+
+So why don't we use this for every component? There's a performance cost that depends
+on the number of components it is responsible for. Larger apps could benefit from this.
+
+Only use memoization if you can quantify the performance gains (i.e. if tests have 
+resulted in a noticeably better performance). Otherwise it's not worth it.
+
+This doesn't work for props that are objects unless...
+
+
+
+156. Preventing Function Re-Creation with useCallback()
+
+Use Callback is a hook that allows us to basically store a function across 
+component executions. So it allows us to tell React that we wanna save a function.
+
+
+
+157. useCallback() and its Dependencies
+
+What is the point of the dependencies if it uses the same logic between each render 
+cycle? Nothing changes right?
+
+Note: In JS you don't need to use "this." since functions can access variables outside
+its scope.
+
+Closures are when you have a function defined inside of another function, that inner 
+function has access to the variables and scope of the outer function even if the 
+outer function finishes executing and those variables are no longer accessible 
+outside of that function.
+
+useCallback will return a memoized version of the callback that only changes if one
+of the dependencies has changed. This is useful when passing callbacks to optimized
+child components that rely on reference equality to prevent unnecessary renders.
+
+So it makes it so a function doesn't run unless a condition/dependency is met.
+
+Great explanation: https://www.youtube.com/watch?v=_AyFP5s69N4
+
+
+
+158. A First Summary
+
+
+
+159. A Closer Look At State & Components
+
+React makes sure that useState and the value you pass as a default value to useState 
+essentially is only considered once. The first time ever a component is rendered, so 
+the very first time the app component runs, useState, when executed, creates a new 
+state variable which is handed off to React and which is managed by React. React then 
+basically memorizes to which component that belongs. The app component, in our case.
+And it uses the default value to initialize the state with that value. For subsequent 
+app function calls, so for reevaluations of the app component, when useState is being 
+called, no new state is being created. Instead, React recognizes that it already has 
+a state for this component, and it instead simply updates that state as needed because 
+the app function reran because some state changed most likely, and therefore React 
+will only do that state management and updating.
+
+
+
+160. Understanding State Scheduling & Batching
+
+
+Because of a theoretical delay between state changes, using the prevState => !prevState
+method for example, is the safest instead of doing state = !state or something like that.
+
+When a state is updated, it's scheduled and doesn't apply until the ENTIRE page is 
+rendered. So if you set a state of two different variables...
+
+setFirstThing(true);
+setSecondThing(false);
+
+... it won't refresh the page twice but schedules these changes for the next render.
+
+
+
+161. Optimizing with useMemo()
+
+useMemo basically allows you to memoize, so basically that means to store,
+any kind of data which you want to store,just like useCallback does it for functions.
+Memoizing is like caching a value so it doesn't need to be re-computed mulitiple times.
+
+For example a problem would be with slow functions ie a loop of some sort. Since the
+entire component renders every time, if there is a slow loop function the entire 
+component could have a performance delay.
+
+Overuse could slow performance if used everywhere.
+
+https://blog.webdevsimplified.com/2020-05/memoization-in-react/
