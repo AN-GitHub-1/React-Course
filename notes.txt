@@ -3,4 +3,57 @@
 Most functions in modern React is function based and class-based components can't 
 use React Hooks.
 
+
+
 165. Adding a First Class-based Component
+
+To use props: 
+import { Component } from 'react';
+
+Further notes in User.js
+
+Projects are usually made using only class or function based components.
+
+
+
+166. Working with State & Events
+
+Notes in Users.js
+
+
+
+167. The Component Lifecycle (Class-based Components Only!)
+
+componentDidMount() is equivalent to  useEffect(..., [])
+Called once component mounted (was evaluated and rendered)
+
+componentDidUpdate() is equivalent to useEffect(..., [someValue])
+Called once component updated (was evaluted and rendered)
+
+componentWillUnMount() is equivalent to useEffect(()=> { return () => {...}}, [])
+Called right before component is unmounted (removed from DOM)
+
+
+
+169. Class-based Components & Context
+
+To use context, it's the same process as the function based method but with a Consumer
+instead of useContext(). This was covered in a previous lecture. But, the catch is
+that with this method a component can only access one context.
+
+
+
+170. Class-based vs Functional Components: A Summary
+
+Should I use function or class based?
+
+Use class based if...
+1. you're working on an existing project or in a team wher they're getting used
+2. you build an 'error boundary' or componentDidCatch()
+
+
+
+171. Introducing Error Boundaries
+
+This lifecycle method will be triggered whenever one of the child components throws 
+an error.
