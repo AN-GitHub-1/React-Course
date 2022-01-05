@@ -1,0 +1,94 @@
+173. Module Introduction
+
+Will learn how to use React with a backend.
+
+
+
+174. How To (Not) Connect To A Database
+
+1. Browser-side code, so JavaScript code running in the browsers should never 
+    directly talk to a database (SQL, NoSQL...). This is NOT secure. Database 
+    credentials would beb exposed in the browser.
+
+2. It SHOULD talk to a backend app (NodeJS, PHP, ...)
+
+
+
+176. Our Starting App & Backend
+
+API or Application Programming Interface. REST API or GraphQL API are the standards.
+
+- REST API
+    - Multiple Endpoints (GET/POST/PUT/PATCH/DELETE...)
+    - POST /user {name: 'Max'}
+    - Http Verb, Path, and body are changed depending on request type
+    - 
+
+- GraphQL API
+    - One Endpoint (POST/...)
+    - POST /graphql { query: 'query:...' }
+    - POST /grapghql part is always the same. Body is changed to submit request
+
+- Both 
+    - Typically JSON data is exchanged
+    - Any Frontend framework can be used
+    - Stateless
+    - Method for client -> server communication
+
+
+
+177. Sending a GET Request
+
+We use the fetch() feature from JS. Fetch is a promise
+https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
+
+What are promises? 
+https://www.youtube.com/watch?v=DHvZLI7Db8E
+Great for doing long processes like downloading images in the background or something.
+
+
+
+
+178. Using async / await
+
+JavaScript promises. Using async / await is an alternative way to avoid using
+a lot of then() and catch() blocks with Promises. 
+
+In synchronous operations tasks are performed one at a time and only when one is 
+completed, the following is unblocked. In other words, you need to wait for a task 
+to finish to move to the next one. 
+
+In asynchronous operations, on the other hand, you can move to another task before 
+the previous one finishes. This way, with asynchronous programming you’re able to 
+deal with multiple requests simultaneously, thus completing more tasks in a much 
+shorter period of time.   
+
+So INSIDE a function, it doesn't procede until an "await" call ends but OUTSIDE it,
+the program will read other functions and continue. So the async function is saying
+"don't wait for me, go on, I'll let you know when I'm finished".
+
+
+
+179. Handling Loading & Data States
+
+The isLoading state is used as an example in the code.
+
+
+
+180. Handling Http Errors
+
+Http response status codes:
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
+
+More explained in code.
+
+
+181. Using useEffect() For Requests
+
+We can use useEffect to automatically load the movies on first load without pressing
+the button.
+
+
+
+182. Preparing The Project For The Next Steps
+
