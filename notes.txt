@@ -48,7 +48,6 @@ Great for doing long processes like downloading images in the background or some
 
 
 
-
 178. Using async / await
 
 JavaScript promises. Using async / await is an alternative way to avoid using
@@ -91,4 +90,57 @@ the button.
 
 
 182. Preparing The Project For The Next Steps
+
+We now use Firebase for a dummy api. It's a backend we can use without writing any code.
+
+
+
+183. Sending a POST Request
+
+Notes in code.
+
+
+
+BONUS: HTTP Crash Course & Exploration
+https://www.youtube.com/watch?v=iYM2zFP3Zn0
+
+What is HTTPS?
+
+-Data sent is encrypted.
+-SSL/TLS
+-Install certificate on web host
+
+HTTP Methods
+
+- The main Methods
+    -GET
+        - Retrieves data from server
+    -POST
+        -Submit data to server
+    - PUT 
+        -Update data already on the server
+    -DELETE 
+        -Deletes data from the server
+
+HTTP Header Fields
+
+Many more than what's listed here...
+
+-General
+    -status code
+-Response
+    -Content-type
+        -text/html
+        -text/css
+        -image/png
+        -application/json
+-Request
+    -Authorization
+    -Content-Type
+    -Cookies
+
+HTTP Status Codes
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
+
+
 
