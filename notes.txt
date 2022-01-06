@@ -19,3 +19,41 @@ name can technically be anything.
 
 Custom components doesn't mean it shares states between components. Each component
 receives its own states. So the logic is the only thing that is shared.
+
+
+
+190. Configuring Custom Hooks
+
+See code for example. The useCounter now works with an argument an a dependency was
+added to the useEffect inside it.
+
+
+
+191. Onwards To A More Realistic Example (part 2)
+
+Going to build a custom hook to outsource the http logic.
+
+
+
+193. Using the Custom Http Hook
+
+
+
+194. Adjusting the Custom Hook Logic (come back to this)
+
+The initial problem with using useEffect() with the fetch() as a dependency is that it
+would create an inifinite loop because in the fetch(), or sendRequest() in the useHttp,
+there are a few states that change which in-turn re-evalutd the App.js because IT is
+using the the custom hook. 
+
+This is because functions are objects in JavaScript. And every time a function is 
+recreated even if it contains the same logic, it's a brand new object in memory.
+
+
+
+195. Using The Custom Hook In More Components
+
+.bind() binds an object to a functinon. Easy explanaiton here:
+https://www.youtube.com/watch?v=g2WcckBB_q0
+
+
