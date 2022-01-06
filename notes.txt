@@ -1,0 +1,21 @@
+187. What are "Custom Hooks"?
+
+They're just functions but functions with stateful logic. Unlike regular functions,
+they can use other hooks and states inside it. You can outsource logic used in 
+different components with custom hooks. It's just another way to re-use logic like
+regular functions.
+
+
+
+188. Creating a Custom React Hook Function
+
+Since the code for backwards/forwards are nearly identical, we will make a custom
+hook in the hooks folder. Custom hook functions MUST start with "use". The file
+name can technically be anything.
+
+
+
+189. Using Custom Hooks
+
+Custom components doesn't mean it shares states between components. Each component
+receives its own states. So the logic is the only thing that is shared.
