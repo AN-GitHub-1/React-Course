@@ -1,0 +1,31 @@
+199. What's So Complex About Forms?
+
+1. Forms and inputs can assume different states.
+    - One or more inputs are invalid
+        - Output input specific error messages
+        - Ensure form can't be submitted
+    - All inputs are valid 
+
+2. When to validate?
+    - When form is submitted
+    - When a input is losing focus
+    - On every keystroke
+
+
+
+200. Dealing With Form Submission & Getting User Input Values
+
+If you want to log each keystroke use State.
+
+You can also use Ref if you just want the final value.
+
+
+
+201. Adding Basic Validation
+
+Anyone can go into the source code and change the javascript.
+Basic validation isn't a security mechanism and is there for user experience.
+
+
+
+202. Providing Validation Feedback
