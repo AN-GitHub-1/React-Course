@@ -53,4 +53,12 @@ onBlur={} in input is when input loses focus. This is built into html.
 
 205. Refactoring & Deriving States
 
-So now we need to validate on each keystroke
+So now we need to validate on each keystroke.
+
+See code.
+
+
+
+206. Managing The Overall Form Validity
+
+How to handle multiple input validation.
