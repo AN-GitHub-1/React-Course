@@ -29,3 +29,28 @@ Basic validation isn't a security mechanism and is there for user experience.
 
 
 202. Providing Validation Feedback
+
+See code.
+
+
+
+203. Handling the "was touched" State
+
+The initial problem is that enteredNameIsValid is set to true. This is a workaround
+for not showing the error message by default but is not good code. A solution would
+be to set the enteredNameIsValid to false and use an enteredNameTouched in useEffect.
+
+
+
+204. React To Lost Focus
+
+At this point, we only validate when the form is submitted and not on losing focus
+or on every keystroke. 
+
+onBlur={} in input is when input loses focus. This is built into html.
+
+
+
+205. Refactoring & Deriving States
+
+So now we need to validate on each keystroke
