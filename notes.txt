@@ -62,3 +62,21 @@ See code.
 206. Managing The Overall Form Validity
 
 How to handle multiple input validation.
+
+
+
+Assignment 5: Time to Practice: Forms
+
+Added an email field
+
+
+
+207. Adding A Custom Input Hook
+
+Added a custom hook to reuse input code
+
+
+
+208. Re-Using The Custom Hook
+
+Did the previous section but for email input.
