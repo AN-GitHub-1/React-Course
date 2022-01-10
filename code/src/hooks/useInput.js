@@ -4,6 +4,7 @@ export default function useInput(validateValue) {
   const [enteredValue, setEnteredValue] = useState("");
   const [enteredValueTouched, setEnteredValueTouched] = useState(false);
 
+  // valueIsValid is simply looking for syntax errors
   const valueIsValid = validateValue(enteredValue);
   const hasError = !valueIsValid && enteredValueTouched;
 

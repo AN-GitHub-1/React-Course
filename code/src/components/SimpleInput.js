@@ -97,12 +97,12 @@ const SimpleInput = (props) => {
     // If form is submitted, we assume that everything is touched
     // setEnteredNameTouched(true);
 
-    if (enteredName.trim() === "") {
-      console.log("empty");
-      // setEnteredNameIsValid(false);
-      // return so the rest of the code doesn't get executed
-      return;
-    }
+    // if (enteredName.trim() === "") {
+    //   console.log("empty");
+    //   // setEnteredNameIsValid(false);
+    //   // return so the rest of the code doesn't get executed
+    //   return;
+    // }
 
     // setEnteredNameIsValid(true);
 
