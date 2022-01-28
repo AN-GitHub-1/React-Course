@@ -58,10 +58,8 @@ const Checkout = (props) => {
   return (
     <form className={classes.form} onSubmit={confirmHandler}>
       <div className={classes.control}>
-        <div className={classes.invalid}>
           <label htmlFor="name">Your Name</label>
           <input ref={nameInputRef} type="text" id="name" />
-        </div>
       </div>
       <div className={classes.control}>
         <label htmlFor="street">Street</label>
