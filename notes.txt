@@ -1,0 +1,19 @@
+Note: Section 1 through 11 not yet uploaded.
+
+Section 1: Getting Started
+Section 2: Javascript Refresher
+Section 3: React Basics and Working with Components
+Section 4: React State and Working with Events
+Section 5: Rendering Lists and Conditional Content
+Section 6: Styling React Components
+Section 7: Debugging React Apps
+Section 8: Practice Project
+Section 9: Working with Fragments, Portals
+Section 10: Handling Side Effects, Using useReducer
+Section 11: Building a Food Order App
+Section 12: useCallback and useMemo
+Section 13: Class Based Components
+Section 14: Sending Http Requests
+Section 15: Building Custom Hooks
+Section 16: Working with Forms and User Input
+Section 17: Http and Forms Project
